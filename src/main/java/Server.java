@@ -26,13 +26,15 @@ public class Server {
             String msg;
             @Override
             public void run() {
-                try {
-                    msg = scanner.nextLine();
-                    bufferedWriter.write(msg);
-                    bufferedWriter.newLine();
-                    bufferedWriter.flush();
-                } catch (IOException e) {
-                    e.printStackTrace();
+                while (true) {
+                    try {
+                        msg = scanner.nextLine();
+                        bufferedWriter.write(msg);
+                        bufferedWriter.newLine();
+                        bufferedWriter.flush();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
